@@ -44,8 +44,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\CDate.cs" />
-    <Compile Include="MyClass.cs" />
+    <Compile Include="CDate.cs" />
+    <Compile Include="Core\Day.cs" />
+    <Compile Include="Core\Hour.cs" />
+    <Compile Include="Core\Millisecond.cs" />
+    <Compile Include="Core\Minute.cs" />
+    <Compile Include="Core\Month.cs" />
+    <Compile Include="Core\Second.cs" />
+    <Compile Include="Core\Week.cs" />
+    <Compile Include="Core\Year.cs" />
+    <Compile Include="Enums\Days.cs" />
+    <Compile Include="Enums\Months.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,7 +14,7 @@ namespace CDate.Core
         private DateTime nativeDate;
         private int year;
         private int month;
-        private DateTime date;
+        private int date;
         private int hours;
         private int minutes;
         private int seconds;
@@ -40,7 +40,7 @@ namespace CDate.Core
         /// <param name="pcDate"></param>
         public CDate(CDate pcDate)
         {
-            this.cDate = pcDate;
+            this.CDate = pcDate;
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace CDate.Core
         /// <param name="pnativeDate"></param>
         public CDate(DateTime pnativeDate)
         {
-            this.nativeDate = pnativeDate;
+            this.NativeDate = pnativeDate;
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace CDate.Core
         /// <param name="pmilliseconds"></param>
         public CDate(long pmilliseconds)
         {
-            this.milliseconds = pmilliseconds;
+            this.Milliseconds = pmilliseconds;
         }
 
         /// <summary>
@@ -71,20 +71,24 @@ namespace CDate.Core
         /// <param name="pminutes"></param>
         /// <param name="pseconds"></param>
         /// <param name="pmilliseconds"></param>
-        public CDate(int pyear, int pmonth, DateTime pdate, int phours, int pminutes, int pseconds, long pmilliseconds)
+        public CDate(int pyear, int pmonth, int pdate, int phours, int pminutes, int pseconds, long pmilliseconds)
         {
-            this.year = pyear;
-            this.month = pmonth;
-            this.date = pdate;
-            this.hours = phours;
-            this.minutes = pminutes;
-            this.seconds = pseconds;
-            this.milliseconds = pmilliseconds;
+            this.Year = pyear;
+            this.Month = pmonth;
+            this.Date = pdate;
+            this.Hours = phours;
+            this.Minutes = pminutes;
+            this.Seconds = pseconds;
+            this.Milliseconds = pmilliseconds;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pdateString"></param>
         public CDate(String pdateString)
         {
-            this.dateString = pdateString;
+            this.DateString = pdateString;
         }
 
         /// <summary>
@@ -126,7 +130,7 @@ namespace CDate.Core
         /// <summary>
         /// 
         /// </summary>
-        public DateTime Date
+        public int Date
         {
             get { return date; }
             set { date = value; }
