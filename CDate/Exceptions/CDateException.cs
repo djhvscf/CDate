@@ -30,7 +30,7 @@ namespace CDate.Exceptions
     /// <summary>
     /// Class base to help in the exception library
     /// </summary>
-    public class ExceptionCDate : Exception
+    public class CDateException : Exception
     {
         /// <summary>
         /// The error message that explains the reason for the exception.
@@ -60,17 +60,24 @@ namespace CDate.Exceptions
         /// <summary>
         /// Default constructor
         /// </summary>
-        public ExceptionCDate()
+        public CDateException()
             : base(messageDefault){}
 
         /// <summary>
         /// Constructor that initialize a new ExceptionCDate with message
         /// </summary>
         /// <param name="message">The error message that explains the reason for the exception.</param>
-        public ExceptionCDate(String message)
+        public CDateException(String message)
             : base(message)
         {
-            this.Message = message;
+            if (message.Equals(""))
+            {
+                this.Message = messageDefault;
+            }
+            else
+            {
+                this.Message = message;
+            }
         }
     
         /// <summary>
@@ -78,7 +85,7 @@ namespace CDate.Exceptions
         /// </summary>
         /// <param name="info">The object that holds the serialized object data</param>
         /// <param name="context">The contextual information about the source or destination</param>
-        public ExceptionCDate(SerializationInfo info, StreamingContext context)
+        public CDateException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             this.Info = info;
@@ -90,11 +97,19 @@ namespace CDate.Exceptions
         /// </summary>
         /// <param name="message">The error message that explains the reason for the exception</param>
         /// <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException"/> parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception</param>
-        public ExceptionCDate(String message, Exception innerException)
+        public CDateException(String message, Exception innerException)
             : base(message, innerException)
         {
-            this.Message = message;
             this.InnerException = innerException;
+
+            if (message.Equals(""))
+            {
+                this.Message = messageDefault;
+            }
+            else
+            {
+                this.Message = message;
+            }
         }
 
         /// <summary>

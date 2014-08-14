@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CDate.Exceptions;
 
 namespace CDate.Core
 {
@@ -48,7 +49,7 @@ namespace CDate.Core
             }
             else
             {
-                throw new Exception(); //Millisecond range exception
+                throw new MillisecondException("The millisecond number has to be greater or equal than 0 and less or equal than 999");
             }
         }
 

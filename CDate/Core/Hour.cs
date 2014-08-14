@@ -20,6 +20,7 @@
 */
 
 using System;
+using CDate.Exceptions;
 
 namespace CDate.Core
 {
@@ -45,7 +46,7 @@ namespace CDate.Core
             }
             else
             {
-                throw new Exception(); //TODO Hour range Exception
+                throw new HourException("The hour number has to be greater or equal than 0 and less or equal than 23");
             }
         }
 

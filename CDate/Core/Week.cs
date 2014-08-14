@@ -20,6 +20,7 @@
 */
 
 using System;
+using CDate.Exceptions;
 
 namespace CDate.Core
 {
@@ -45,7 +46,7 @@ namespace CDate.Core
             }
             else
             {
-                throw new Exception();//TODO Date Range Exception
+                throw new WeekException("The week number has to be greater or equal than 1 and less or equal than 52");
             }
         }
 
