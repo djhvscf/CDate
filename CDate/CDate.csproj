@@ -55,10 +55,14 @@
     <Compile Include="Core\Year.cs" />
     <Compile Include="Enums\Days.cs" />
     <Compile Include="Enums\Months.cs" />
+    <Compile Include="Exceptions\CDateException.cs" />
+    <Compile Include="Exceptions\HourException.cs" />
+    <Compile Include="Exceptions\MillisecondException.cs" />
+    <Compile Include="Exceptions\MinuteException.cs" />
+    <Compile Include="Exceptions\SecondException.cs" />
+    <Compile Include="Exceptions\WeekException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

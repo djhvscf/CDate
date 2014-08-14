@@ -29,14 +29,14 @@ namespace CDate.Core
     public class Year
     {
         /// <summary>
-        /// Number of the year
+        /// The year (1 through 9999)
         /// </summary>
         private int numberYear;
 
         /// <summary>
         /// Default constructor
         /// </summary>
-        /// <param name="pnumberYear">Number of the year</param>
+        /// <param name="pnumberYear">The year (1 through 9999)</param>
         public Year(int pnumberYear)
         {
             this.NumberYear = pnumberYear;
@@ -45,10 +45,19 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set a property
         /// </summary>
-        public int NumberYear
+        private int NumberYear
         {
             get { return numberYear; }
             set { numberYear = value; }
+        }
+
+        /// <summary>
+        /// Return the full year
+        /// </summary>
+        /// <returns>Year 4 digits (Ex: 2014)</returns>
+        public int getFullYear(int month, int day)
+        {
+            return new DateTime(this.NumberYear, month, day).Year;
         }
     }
 }

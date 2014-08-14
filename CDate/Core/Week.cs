@@ -20,6 +20,7 @@
 */
 
 using System;
+using System.Globalization;
 using CDate.Exceptions;
 
 namespace CDate.Core
@@ -53,10 +54,22 @@ namespace CDate.Core
         /// <summary>
         /// Property funtion that allow get and set the property
         /// </summary>
-        public int NumberWeek
+        private int NumberWeek
         {
             get { return numberWeek; }
             set { numberWeek = value; }
+        }
+
+        /// <summary>
+        /// Returns a week of a month
+        /// </summary>
+        /// <returns>Returns a week of a month. Number between 1 and 52</returns>
+        public int getWeek(int pyear, int pmonth, int pday)
+        {
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            Calendar cal = dfi.Calendar;
+
+            return cal.GetWeekOfYear(new DateTime(pyear, pmonth, pday), dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
         }
     }
 }

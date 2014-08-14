@@ -20,6 +20,7 @@
 */
 
 using System;
+using System.Reflection;
 using CDate.Enums;
 
 namespace CDate.Core
@@ -36,6 +37,11 @@ namespace CDate.Core
         private Days nameDay;
 
         /// <summary>
+        /// Number of a day in a month
+        /// </summary>
+        private int numberDay;
+
+        /// <summary>
         /// Constructor that receive a Day name
         /// </summary>
         /// <param name="pnameDay">Day name</param>
@@ -45,12 +51,58 @@ namespace CDate.Core
         }
 
         /// <summary>
+        /// Constructor that receive a number Day
+        /// </summary>
+        /// <param name="pnumberDay">Number of a day</param>
+        public Day(int pnumberDay)
+        {
+            this.NumberDay = pnumberDay;
+        }
+
+        /// <summary>
         /// Property function that allow set and get the property
         /// </summary>
-        public Days NameDay
+        private Days NameDay
         {
             get { return nameDay; }
             set { nameDay = value; }
+        }
+
+        /// <summary>
+        /// Property function that allow set and get the property
+        /// </summary>
+        private int NumberDay
+        {
+            get { return numberDay; }
+            set { numberDay = value; }
+        }
+
+        /// <summary>
+        /// Returns the date of the month. (1-31)
+        /// </summary>
+        /// <returns>Number of the day between 1 and 31</returns>
+        public int getDate(int year, int month)
+        {
+            return new DateTime(year, month, this.NumberDay).Day;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int getDay()
+        {
+            int dayToReturn = -1;
+
+            foreach (int i in Enum.GetValues(typeof(Days)))
+            {
+                if (i == this.NumberDay)
+                {
+                    dayToReturn = i;
+                }
+            }
+
+            return dayToReturn;
         }
     }
 }

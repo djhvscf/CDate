@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CDate.Enums;
 
 namespace CDate.Core
 {
@@ -11,14 +12,16 @@ namespace CDate.Core
     public class CDate
     {
         private CDate cDate;
+        private Millisecond millisecond;
+        private Second second;
+        private Minute minute;
+        private Hour hour;
+        private Day day;
+        private Week week;
+        private Month month;
+        private Year year;
+        private int dayOfMonth;
         private DateTime nativeDate;
-        private int year;
-        private int month;
-        private int date;
-        private int hours;
-        private int minutes;
-        private int seconds;
-        private long milliseconds;
         private String dateString;
         private static readonly int monthInYear = 12;
         private static readonly int daysInMonth = 31;
@@ -58,7 +61,7 @@ namespace CDate.Core
         /// <param name="pmilliseconds"></param>
         public CDate(long pmilliseconds)
         {
-            this.Milliseconds = pmilliseconds;
+            this.Millisecond = new Millisecond(pmilliseconds);
         }
 
         /// <summary>
@@ -66,20 +69,43 @@ namespace CDate.Core
         /// </summary>
         /// <param name="pyear"></param>
         /// <param name="pmonth"></param>
-        /// <param name="pdate"></param>
+        /// <param name="pdayOfMonth"></param>
         /// <param name="phours"></param>
         /// <param name="pminutes"></param>
         /// <param name="pseconds"></param>
         /// <param name="pmilliseconds"></param>
-        public CDate(int pyear, int pmonth, int pdate, int phours, int pminutes, int pseconds, long pmilliseconds)
+        public CDate(int pyear, Months pmonth, int pweek, int pdayOfMonth, int phours, int pminutes, int pseconds, long pmilliseconds)
         {
-            this.Year = pyear;
-            this.Month = pmonth;
-            this.Date = pdate;
-            this.Hours = phours;
-            this.Minutes = pminutes;
-            this.Seconds = pseconds;
-            this.Milliseconds = pmilliseconds;
+            this.Year = new Year(pyear);
+            this.Month = new Month(pmonth);
+            this.Week = new Week(pweek);
+            this.DayOfMonth = pdayOfMonth;
+            this.Day = new Day(pdayOfMonth);
+            this.Hour= new Hour(phours);
+            this.Minute = new Minute(pminutes);
+            this.Second = new Second(pseconds);
+            this.Millisecond = new Millisecond(pmilliseconds);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pyear"></param>
+        /// <param name="pmonth"></param>
+        /// <param name="pnameDay"></param>
+        /// <param name="phours"></param>
+        /// <param name="pminutes"></param>
+        /// <param name="pseconds"></param>
+        /// <param name="pmilliseconds"></param>
+        private CDate(int pyear, Months pmonth, Days pnameDay, int phours, int pminutes, int pseconds, long pmilliseconds)
+        {
+            this.Year = new Year(pyear);
+            this.Month = new Month(pmonth);
+            this.Day = new Day(pnameDay);
+            this.Hour = new Hour(phours);
+            this.Minute = new Minute(pminutes);
+            this.Second = new Second(pseconds);
+            this.Millisecond = new Millisecond(pmilliseconds);
         }
 
         /// <summary>
@@ -112,7 +138,7 @@ namespace CDate.Core
         /// <summary>
         /// 
         /// </summary>
-        public int Year
+        public Year Year
         {
             get { return year; }
             set { year = value; }
@@ -121,7 +147,7 @@ namespace CDate.Core
         /// <summary>
         /// 
         /// </summary>
-        public int Month
+        public Month Month
         {
             get { return month; }
             set { month = value; }
@@ -130,46 +156,46 @@ namespace CDate.Core
         /// <summary>
         /// 
         /// </summary>
-        public int Date
+        public Day Day
         {
-            get { return date; }
-            set { date = value; }
+            get { return day; }
+            set { day = value; }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public int Hours
+        public Hour Hour
         {
-            get { return hours; }
-            set { hours = value; }
+            get { return hour; }
+            set { hour = value; }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public int Minutes
+        public Minute Minute
         {
-            get { return minutes; }
-            set { minutes = value; }
+            get { return minute; }
+            set { minute = value; }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public int Seconds
+        public Second Second
         {
-            get { return seconds; }
-            set { seconds = value; }
+            get { return second; }
+            set { second = value; }
         }
         
         /// <summary>
         /// 
         /// </summary>
-        public long Milliseconds
+        public Millisecond Millisecond
         {
-            get { return milliseconds; }
-            set { milliseconds = value; }
+            get { return millisecond; }
+            set { millisecond = value; }
         }
 
         /// <summary>
@@ -180,5 +206,42 @@ namespace CDate.Core
             get { return dateString; }
             set { dateString = value; }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int DayOfMonth
+        {
+            get { return dayOfMonth; }
+            set { dayOfMonth = value; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Week Week
+        {
+            get { return week; }
+            set { week = value; }
+        }
+
+        /// <summary>
+        /// Return the full year
+        /// </summary>
+        /// <returns>Year 4 digits (Ex: 2014)</returns>
+        public int getFullYear()
+        {
+            return this.Year.getFullYear(this.Month.getMonth(), this.DayOfMonth);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public int getWeek()
+        {
+            return this.Week.getWeek(this.getFullYear(), this.Month.getMonth(), this.DayOfMonth);
+        }
+
     }
 }

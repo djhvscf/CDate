@@ -19,6 +19,7 @@
  SOFTWARE.
 */
 
+using System;
 using CDate.Enums;
 
 namespace CDate.Core
@@ -34,6 +35,16 @@ namespace CDate.Core
         private Months month;
 
         /// <summary>
+        /// Represents a  first month of a Year January
+        /// </summary>
+       private static readonly int defaultYear = 2014;
+
+        /// <summary>
+        /// Represent a first day of a week. Sunday
+        /// </summary>
+        private static readonly int defaultDay = 1;
+
+        /// <summary>
         /// Constructor with the Month
         /// </summary>
         /// <param name="pmonth">Month</param>
@@ -45,10 +56,20 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        public Months Month
+        private Months Month
         {
             get { return month; }
             set { month = value; }
+        }
+
+        /// <summary>
+        /// Returns the month of the year. (0-11)
+        /// Value is zero-index, meaning Jan=0, Feb=1, Mar=2, etc
+        /// </summary>
+        /// <returns>Month of the year</returns>
+        public int getMonth()
+        {
+            return Convert.ToInt32(this.Month.ToString());
         }
     }
 }
