@@ -1,4 +1,25 @@
-﻿using System;
+﻿/*
+ Copyright (c) 2014-2015 Dennis Hernández Vargas (djhvscf)
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,41 +29,99 @@ using CDate.Exceptions;
 namespace CDate.Core
 {
     /// <summary>
-    /// 
+    /// Class base to provide the main fuction of this library
     /// </summary>
     public class CDate
     {
+    	/// <summary>
+    	/// Object that represent a Year
+    	/// </summary>
         private Year year;
-        private Month month;
-        private Day day;
-        private Week week;
-        private Hour hour;
-        private Minute minute;
-        private Second second;
-        private Millisecond millisecond;
-        private String dateString;
-        private DateTime nativeDate;
-        private static readonly String formatMMddyy = "MM/dd/yy";
-        private static readonly String formatddMMyy = "dd/MM/yy";
-        private static readonly String formatMMddyyyy = "MM/dd/yyyy";
-        private static readonly String formatddMMyyyy = "dd/MM/yyyy";
-        private static readonly String format24Hour = "HH:mm:ss";
-        private static readonly String format12Hour = "hh:mm:ss";
-        private static readonly String formatAMPM = "tt";
-        //private int dayOfMonth;
-        /*private static readonly int monthInYear = 12;
-        private static readonly int daysInMonth = 31;
-        private static readonly int hoursInDay = 24;
-        private static readonly int minutesInHour = 60;
-        private static readonly int secondsInMinute = 60;
-        private static readonly int millisecondsInSecond = 1000;
-        private static readonly String ISO_FORMAT_STRING = "yyyy-MM-dd'T'HH:mm:ss(.fff)";
-        private static readonly String ISO_FORMAT_STRING_TZ = (ISO_FORMAT_STRING + "zzz");*/
 
         /// <summary>
-        /// 
+        ///Object that represent a Month 
         /// </summary>
-        /// <param name="pnativeDate"></param>
+        private Month month;
+        
+        /// <summary>
+        /// Object that represent a Day
+        /// </summary>
+        private Day day;
+        
+        /// <summary>
+        /// Object that represent a Week
+        /// </summary>
+        private Week week;
+        
+        /// <summary>
+        /// Object that represent an Hour
+        /// </summary>
+        private Hour hour;
+        
+        /// <summary>
+        /// Object that represent a Minute
+        /// </summary>
+        private Minute minute;
+        
+        /// <summary>
+        /// Object that represent a Second
+        /// </summary>
+        private Second second;
+        
+        /// <summary>
+        /// Object that represent a Millisecond
+        /// </summary>
+        private Millisecond millisecond;
+        
+        /// <summary>
+        /// Object that represent the String date passed by parameter
+        /// </summary>
+        private String dateString;
+        
+        /// <summary>
+        /// Main object where we obtain the properties
+        /// </summary>
+        private DateTime nativeDate;
+        
+        /// <summary>
+        /// String for obtains the date in MM/dd/yy format
+        /// </summary>
+        private static readonly String formatMMddyy = "MM/dd/yy";
+        
+        /// <summary>
+        /// String for obtains the date in dd/MM/yy format
+        /// </summary>
+        private static readonly String formatddMMyy = "dd/MM/yy";
+        
+        /// <summary>
+        /// String for obtains the date in MM/dd/yyyy format
+        /// </summary>
+        private static readonly String formatMMddyyyy = "MM/dd/yyyy";
+        
+        /// <summary>
+        /// String for obtains the date in dd/MM/yyyy format
+        /// </summary>
+        private static readonly String formatddMMyyyy = "dd/MM/yyyy";
+        
+        /// <summary>
+        /// String for obtains the  hour in 24 format (00 to 23)
+        /// </summary>
+        private static readonly String format24Hour = "HH:mm:ss";
+        
+        /// <summary>
+        /// String for obtains the hour in 12 format (1 to 12)
+        /// </summary>
+        private static readonly String format12Hour = "hh:mm:ss";
+        
+        /// <summary>
+        /// String for obtains AM or PM
+        /// </summary>
+        private static readonly String formatAMPM = "tt";
+
+        /// <summary>
+        /// Constructor that receives a DateTime object
+        /// </summary>
+        /// <param name="pnativeDate">DateTime object</param>
         public CDate(DateTime pnativeDate)
         {
             this.NativeDate = pnativeDate;
@@ -57,9 +136,9 @@ namespace CDate.Core
         }
         
         /// <summary>
-        /// 
+        /// Constructor that receives a String that will be convert to DateTime
         /// </summary>
-        /// <param name="dateString"></param>
+        /// <param name="dateString">String to convert to DateTime</param>
         public CDate(String dateString)
         {
         	this.DateString = dateString;
@@ -75,7 +154,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private DateTime NativeDate
         {
@@ -84,7 +163,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Year Year
         {
@@ -93,7 +172,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Month Month
         {
@@ -103,7 +182,7 @@ namespace CDate.Core
         
         
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Week Week
         {
@@ -112,7 +191,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Day Day
         {
@@ -121,7 +200,7 @@ namespace CDate.Core
         }
         
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Hour Hour
         {
@@ -130,7 +209,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Minute Minute
         {
@@ -139,7 +218,7 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Second Second
         {
@@ -148,7 +227,7 @@ namespace CDate.Core
         }
         
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private Millisecond Millisecond
         {
@@ -157,129 +236,222 @@ namespace CDate.Core
         }
 
         /// <summary>
-        /// 
+        /// Property funtion that allow get and set the property
         /// </summary>
         private String DateString
         {
             get { return dateString; }
             set { dateString = value; }
         }
-
-        /*/// <summary>
-        /// 
-        /// </summary>
-        private int DayOfMonth
-        {
-            get { return dayOfMonth; }
-            set { dayOfMonth = value; }
-        }*/
 	
+        /// <summary>
+        /// Functions that returns a String with date in format MM/dd/yy
+        /// </summary>
+        /// <returns>String of a date in format MM/dd/yy</returns>
     	public String getDate_MM_dd_yy()
         {
         	return this.NativeDate.ToString(formatMMddyy);
         }
         
+    	/// <summary>
+        /// Functions that returns a String with date in format MM/dd/yyyy
+        /// </summary>
+        /// <returns>String of a date in format MM/dd/yyyy</returns>
         public String getDate_MM_dd_yyyy()
         {
         	return this.NativeDate.ToString(formatMMddyyyy);
         }
         
+        /// <summary>
+        /// Functions that returns a String with date and hour in format MM/dd/yy HH:mm:ss (24 Format)
+        /// </summary>
+        /// <returns>String of a date in format MM/dd/yy HH:mm:ss (24 Format)</returns>
         public String getDate_MM_dd_yy_HH_mm_ss()
         {
     		return this.NativeDate.ToString(formatMMddyy + " " + format24Hour);
         }
         
+        /// <summary>
+        /// Functions that returns a String with date and hour in format MM/dd/yyyy HH:mm:ss (24 Format)
+        /// </summary>
+        /// <returns>String of a date in format MM/dd/yyyy HH:mm:ss (24 Format)</returns>
         public String getDate_MM_dd_yyyy_HH_mm_ss()
         {
     		return this.NativeDate.ToString(formatMMddyyyy + " " + format24Hour);
         }
         
+        /// <summary>
+        /// /// Functions that returns a String with date and hour in format MM/dd/yy hh:mm:ss (12 Format)
+        /// </summary>
+        /// <param name="isAMPM">True -> Include the AMPM to hour, false -> No include the AMPM</param>
+        /// <returns>String of a date in format MM/dd/yy HH:mm:ss (AMPM) (12 Format)</returns>
         public String getDate_MM_dd_yy_hh_mm_ss(bool isAMPM)
         {
         	return this.NativeDate.ToString(formatMMddyy + " " + format12Hour + (isAMPM ? " " + formatAMPM : ""));
         }
         
+        /// <summary>
+        /// /// Functions that returns a String with date and hour in format MM/dd/yyyy hh:mm:ss (12 Format)
+        /// </summary>
+        /// <param name="isAMPM">True -> Include the AMPM to hour, false -> No include the AMPM</param>
+        /// <returns>String of a date in format MM/dd/yyyy HH:mm:ss (AMPM) (12 Format)</returns>
         public String getDate_MM_dd_yyyy_hh_mm_ss(bool isAMPM)
         {
         	return this.NativeDate.ToString(formatMMddyyyy + " " + format12Hour + (isAMPM ? " " + formatAMPM : ""));
         }
         
+        /// <summary>
+        /// Functions that returns a String with date in format dd/MM/yy
+        /// </summary>
+        /// <returns>String of a date in format dd/MM/yy</returns>
         public String getDate_dd_MM_yy()
         {
         	return this.NativeDate.ToString(formatddMMyy);
         }
         
+        /// <summary>
+        /// Functions that returns a String with date in format dd/MM/yyyy
+        /// </summary>
+        /// <returns>String of a date in format dd/MM/yyyy</returns>
         public String getDate_dd_MM_yyyy()
         {
         	return this.NativeDate.ToString(formatddMMyyyy);
         }
         
+        /// <summary>
+        /// Functions that returns a String with date and hour in format dd/MM/yy HH:mm:ss (24 Format)
+        /// </summary>
+        /// <returns>String of a date in format dd/MM/yy HH:mm:ss (24 Format)</returns>
         public String getDate_dd_MM_yy_HH_mm_ss()
         {
         	return this.NativeDate.ToString(formatddMMyy + " " + format24Hour);
         }
         
+        /// <summary>
+        /// Functions that returns a String with date and hour in format dd/MM/yyyy HH:mm:ss (24 Format)
+        /// </summary>
+        /// <returns>String of a date in format dd/MM/yyyy HH:mm:ss (24 Format)</returns>
         public String getDate_dd_MM_yyyy_HH_mm_ss()
         {
         	return this.NativeDate.ToString(formatddMMyyyy + " " + format24Hour);
         }
         
+        /// <summary>
+        /// /// Functions that returns a String with date and hour in format dd/MM/yy hh:mm:ss (12 Format)
+        /// </summary>
+        /// <param name="isAMPM">True -> Include the AMPM to hour, false -> No include the AMPM</param>
+        /// <returns>String of a date in format dd/MM/yy HH:mm:ss (AMPM) (12 Format)</returns>
         public String getDate_dd_MM_yy_hh_mm_ss(bool isAMPM)
         {
         	return this.NativeDate.ToString(formatddMMyy + " " + format12Hour + (isAMPM ? " " + formatAMPM : ""));
         }
         
+        /// <summary>
+        /// /// Functions that returns a String with date and hour in format dd/MM/yyyy hh:mm:ss (12 Format)
+        /// </summary>
+        /// <param name="isAMPM">True -> Include the AMPM to hour, false -> No include the AMPM</param>
+        /// <returns>String of a date in format dd/MM/yyyy HH:mm:ss (AMPM) (12 Format)</returns>
         public String getDate_dd_MM_yyyy_hh_mm_ss(bool isAMPM)
         {
         	return this.NativeDate.ToString(formatddMMyyyy + " " + format12Hour + (isAMPM ? " " + formatAMPM : ""));
         }
         
+        /// <summary>
+        /// Get the year of a Date (4 digits)
+        /// </summary>
+        /// <returns>Year with 4 digits</returns>
         public int getYear()
         {
         	return this.Year._NumberYear;
         }
         
+        /// <summary>
+        /// Get the month nummber of a date (1 to 12)
+        /// </summary>
+        /// <returns>Month number between 1 and 12</returns>
         public int getMonthNumber()
         {
         	return this.Month._Month;
         }
         
+        /// <summary>
+        /// Get the month name of a date
+        /// </summary>
+        /// <returns>Month name</returns>
         public String getMonthName()
         {
 			return new System.Globalization.DateTimeFormatInfo().GetMonthName(this.Month._Month).ToString();
         }
         
+        /// <summary>
+        /// Get the day number of a date (1 to 31)
+        /// </summary>
+        /// <returns>Day number between 1 to 31</returns>
         public int getDayNumber()
         {
         	return this.Day._NumberDay;
         }
         
+        /// <summary>
+        /// Get the day name of a date in english version
+        /// </summary>
+        /// <returns>Day name</returns>
         public String getDayName()
         {
 			return this.NativeDate.DayOfWeek.ToString();
 			//return this.NativeDate.ToString("dddd"); Spanish
         }
         
+        /// <summary>
+        /// Get the week number of a date (1 to 52)
+        /// </summary>
+        /// <returns>Week number between 1 and 52</returns>
         public int getWeek()
         {
         	return this.Week.getWeek(this.NativeDate);
         }
         
-        public String getHour(bool isFormat24Hour)
+        /// <summary>
+        /// Get the hour of a date if this date include the hour, if not this function return 12:00 or 12:00 a.m.
+        /// </summary>
+        /// <param name="isAMPM">True -> Hour include AMPM, False -> Hour no include AMPM</param>
+        /// <returns>Hour of a date</returns>
+        public String getHour(bool isAMPM)
         {
-			return this.NativeDate.ToString((isFormat24Hour ? format24Hour : format12Hour));
+			return this.NativeDate.ToString((isAMPM ? format12Hour + " " + formatAMPM : format12Hour));
         }
         
+        /// <summary>
+        /// Get the hour of a date if this date include the hour, if not this function return 00:00
+        /// </summary>
+        /// <returns>Hour if a date</returns>
+        public String getHour24Format()
+        {
+        	return this.NativeDate.ToString(format24Hour);
+        }
+        
+        /// <summary>
+        /// Get the hour of a date if this date include the hour, if not this function return 00
+        /// </summary>
+        /// <returns>Minutes</returns>
         public int getMinute()
         {
         	return this.Minute._Minute;
         }
         
+        /// <summary>
+        /// Get the hour of a date if this date include the hour, if not this function return 00
+        /// </summary>
+        /// <returns>Seconds</returns>
         public int getSecond()
         {
         	return this.Second._Second;
         }
         
+        /// <summary>
+        /// Get the hour of a date if this date include the hour, if not this function return 00
+        /// </summary>
+        /// <returns>Milliseconds</returns>
         public int getMillisecond()
         {
         	return this.Millisecond._Millisecond;

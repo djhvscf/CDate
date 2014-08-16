@@ -36,7 +36,8 @@ Main Functions
 .getDayNumber() -> Return the day number.
 .getDayName() -> Return the day name.
 .getWeek() -> Return the week number. 1 to 52.
-.getHour(boolean) -> Return the hour of the date. True to apply 24 format or false to apply 12 format.
+.getHour(boolean) -> Return the hour of the date. True to include AMPM or false no include AMPM.
+.getHour24Format() -> Return the hour of a date in 24 format.
 .getMinute() -> Return the minutes of the date.
 .getSecond() -> Return the seconds of the date.
 .getMillisecond() -> Return the millisecond of the date.
