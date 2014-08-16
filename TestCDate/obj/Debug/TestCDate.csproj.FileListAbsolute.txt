@@ -1,0 +1,8 @@
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\bin\Debug\TestCDate.exe.config
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\bin\Debug\TestCDate.exe
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\bin\Debug\TestCDate.pdb
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\bin\Debug\CDate.dll
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\bin\Debug\CDate.pdb
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\obj\Debug\TestCDate.csprojResolveAssemblyReference.cache
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\obj\Debug\TestCDate.exe
+C:\Users\Dennis\Documents\GitHub\CDate\TestCDate\obj\Debug\TestCDate.pdb
