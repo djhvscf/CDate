@@ -35,7 +35,7 @@ namespace CDate.Core
         /// <summary>
         /// Number of the second. Number between 0 and 59
         /// </summary>
-        private int second;
+        private int _second;
 
         /// <summary>
         /// Constructor with the number of the second.
@@ -45,7 +45,7 @@ namespace CDate.Core
         {
             if (psecond >= 0 && psecond <= 59)
             {
-                this.Second = psecond;
+                this._Second = psecond;
             }
             else
             {
@@ -56,10 +56,10 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        public int Second
+        public int _Second
         {
-            get { return second; }
-            set { second = value; }
+            get { return _second; }
+            set { _second = value; }
         }
     }
 }

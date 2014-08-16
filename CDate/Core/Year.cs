@@ -31,7 +31,7 @@ namespace CDate.Core
         /// <summary>
         /// The year (1 through 9999)
         /// </summary>
-        private int numberYear;
+        private int _numberYear;
 
         /// <summary>
         /// Default constructor
@@ -39,25 +39,25 @@ namespace CDate.Core
         /// <param name="pnumberYear">The year (1 through 9999)</param>
         public Year(int pnumberYear)
         {
-            this.NumberYear = pnumberYear;
+            this._NumberYear = pnumberYear;
         }
 
         /// <summary>
         /// Property function that allow get and set a property
         /// </summary>
-        private int NumberYear
+        public int _NumberYear
         {
-            get { return numberYear; }
-            set { numberYear = value; }
+            get { return _numberYear; }
+            set { _numberYear = value; }
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Return the full year
         /// </summary>
         /// <returns>Year 4 digits (Ex: 2014)</returns>
         public int getFullYear(int month, int day)
         {
             return new DateTime(this.NumberYear, month, day).Year;
-        }
+        }*/
     }
 }

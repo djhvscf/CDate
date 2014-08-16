@@ -34,12 +34,12 @@ namespace CDate.Core
         /// <summary>
         /// Name of the new Day
         /// </summary>
-        private Days nameDay;
+        private Days _nameDay;
 
         /// <summary>
         /// Number of a day in a month
         /// </summary>
-        private int numberDay;
+        private int _numberDay;
 
         /// <summary>
         /// Constructor that receive a Day name
@@ -47,7 +47,7 @@ namespace CDate.Core
         /// <param name="pnameDay">Day name</param>
         public Day(Days pnameDay)
         {
-            this.NameDay = pnameDay;
+            this._NameDay = pnameDay;
         }
 
         /// <summary>
@@ -56,28 +56,28 @@ namespace CDate.Core
         /// <param name="pnumberDay">Number of a day</param>
         public Day(int pnumberDay)
         {
-            this.NumberDay = pnumberDay;
+            this._NumberDay = pnumberDay;
         }
 
         /// <summary>
         /// Property function that allow set and get the property
         /// </summary>
-        private Days NameDay
+        private Days _NameDay
         {
-            get { return nameDay; }
-            set { nameDay = value; }
+            get { return _nameDay; }
+            set { _nameDay = value; }
         }
 
         /// <summary>
         /// Property function that allow set and get the property
         /// </summary>
-        private int NumberDay
+        public int _NumberDay
         {
-            get { return numberDay; }
-            set { numberDay = value; }
+            get { return _numberDay; }
+            set { _numberDay = value; }
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Returns the date of the month. (1-31)
         /// </summary>
         /// <returns>Number of the day between 1 and 31</returns>
@@ -103,6 +103,6 @@ namespace CDate.Core
             }
 
             return dayToReturn;
-        }
+        }*/
     }
 }

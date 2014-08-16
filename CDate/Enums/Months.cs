@@ -29,7 +29,7 @@ namespace CDate.Enums
     /// <summary>
     /// Enum that represent the Months of an year
     /// </summary>
-    enum Months
+    public enum Months
     {
         /// <summary>
         /// January

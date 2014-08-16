@@ -27,12 +27,12 @@ namespace CDate.Core
     /// <summary>
     /// Class that represent a Minute
     /// </summary>
-    private class Minute
+    public class Minute
     {
         /// <summary>
         /// Number of the minute. Number between 0 and 59
         /// </summary>
-        private int minute;
+        private int _minute;
 
         /// <summary>
         /// Constructor with the number of the minute
@@ -42,7 +42,7 @@ namespace CDate.Core
         {
             if (pminute >= 0 && pminute <= 59)
             {
-                this.Minute = pminute;
+                this._Minute = pminute;
             }
             else
             {
@@ -53,10 +53,10 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        public int Minute
+        public int _Minute
         {
-            get { return minute; }
-            set { minute = value; }
+            get { return _minute; }
+            set { _minute = value; }
         }
     }
 }

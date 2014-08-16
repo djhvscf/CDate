@@ -32,7 +32,7 @@ namespace CDate.Core
         /// <summary>
         /// Number of the hour. Number between 0 and 23
         /// </summary>
-        private int hour;
+        private int _hour;
 
         /// <summary>
         /// Constructor with the number of the hour
@@ -42,7 +42,7 @@ namespace CDate.Core
         {
             if (phour >= 0 && phour <= 23)
             {
-                this.Hour = phour;
+                this._Hour = phour;
             }
             else
             {
@@ -53,10 +53,10 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        public int Hour
+        public int _Hour
         {
-            get { return hour; }
-            set { hour = value; }
+            get { return _hour; }
+            set { _hour = value; }
         }
     }
 }

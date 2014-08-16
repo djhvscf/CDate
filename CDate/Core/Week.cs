@@ -33,8 +33,13 @@ namespace CDate.Core
         /// <summary>
         /// Number of the week. Number between 1 and 52
         /// </summary>
-        private int numberWeek;
+        private int _numberWeek;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public Week(){}
+        
         /// <summary>
         /// Constructor with the number of the week
         /// </summary>
@@ -43,7 +48,7 @@ namespace CDate.Core
         {
             if (pnumberWeek <= 52 && pnumberWeek >= 1 )
             {
-                this.NumberWeek = numberWeek;
+                this._NumberWeek = pnumberWeek;
             }
             else
             {
@@ -54,22 +59,22 @@ namespace CDate.Core
         /// <summary>
         /// Property funtion that allow get and set the property
         /// </summary>
-        private int NumberWeek
+        private int _NumberWeek
         {
-            get { return numberWeek; }
-            set { numberWeek = value; }
+            get { return _numberWeek; }
+            set { _numberWeek = value; }
         }
 
         /// <summary>
         /// Returns a week of a month
         /// </summary>
         /// <returns>Returns a week of a month. Number between 1 and 52</returns>
-        public int getWeek(int pyear, int pmonth, int pday)
+        public int getWeek(DateTime nativeDate)
         {
             DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
             Calendar cal = dfi.Calendar;
 
-            return cal.GetWeekOfYear(new DateTime(pyear, pmonth, pday), dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
+            return cal.GetWeekOfYear(nativeDate, dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
         }
     }
 }

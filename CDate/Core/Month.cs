@@ -32,7 +32,7 @@ namespace CDate.Core
         /// <summary>
         /// Month of the year
         /// </summary>
-        private Months month;
+        private int _month;
 
         /// <summary>
         /// Represents a  first month of a Year January
@@ -48,21 +48,21 @@ namespace CDate.Core
         /// Constructor with the Month
         /// </summary>
         /// <param name="pmonth">Month</param>
-        public Month(Months pmonth)
+        public Month(int month)
         {
-            this.Month = pmonth;
+        	this._Month = month;
         }
 
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        private Months Month
+        public int _Month
         {
-            get { return month; }
-            set { month = value; }
+            get { return _month; }
+            set { _month = value; }
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Returns the month of the year. (0-11)
         /// Value is zero-index, meaning Jan=0, Feb=1, Mar=2, etc
         /// </summary>
@@ -70,6 +70,6 @@ namespace CDate.Core
         public int getMonth()
         {
             return Convert.ToInt32(this.Month.ToString());
-        }
+        }*/
     }
 }

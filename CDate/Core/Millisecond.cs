@@ -35,17 +35,17 @@ namespace CDate.Core
         /// <summary>
         /// Number of the millisecond. Number between 0 and 999
         /// </summary>
-        private long millisecond;
+        private int _millisecond;
 
         /// <summary>
         /// Constructor with the number of the millisecond
         /// </summary>
         /// <param name="pmillisecond">Number of the millisecond. Number between 0 and 999</param>
-        public Millisecond(long pmillisecond)
+        public Millisecond(int pmillisecond)
         {
             if (pmillisecond >= 0 && pmillisecond <= 999)
             {
-                this.Millisecond = pmillisecond;
+                this._Millisecond = pmillisecond;
             }
             else
             {
@@ -56,10 +56,10 @@ namespace CDate.Core
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        public long Millisecond
+        public int _Millisecond
         {
-            get { return millisecond; }
-            set { millisecond = value; }
+            get { return _millisecond; }
+            set { _millisecond = value; }
         }
     }
 }

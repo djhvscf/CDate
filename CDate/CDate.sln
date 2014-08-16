@@ -4,6 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # SharpDevelop 5.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDate", "CDate.csproj", "{B09A2305-B3F5-4966-A6EA-1CAC9751D49C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCDate", "..\TestCDate\TestCDate.csproj", "{4310D385-5459-4635-94E6-B003F9302C59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,9 @@ Global
 		{B09A2305-B3F5-4966-A6EA-1CAC9751D49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B09A2305-B3F5-4966-A6EA-1CAC9751D49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B09A2305-B3F5-4966-A6EA-1CAC9751D49C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4310D385-5459-4635-94E6-B003F9302C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4310D385-5459-4635-94E6-B003F9302C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4310D385-5459-4635-94E6-B003F9302C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4310D385-5459-4635-94E6-B003F9302C59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

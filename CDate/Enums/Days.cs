@@ -29,7 +29,7 @@ namespace CDate.Enums
     /// <summary>
     /// Enum that represents the days of a week
     /// </summary>
-    enum Days
+    public enum Days
     {
         Sunday = 0,
         Monday = 1,

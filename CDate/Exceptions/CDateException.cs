@@ -35,22 +35,22 @@ namespace CDate.Exceptions
         /// <summary>
         /// The error message that explains the reason for the exception.
         /// </summary>
-        private String message;
+        private String _message;
         
         /// <summary>
         /// The exception that is the cause of the current exception
         /// </summary>
-        private Exception innerException;
+        private Exception _innerException;
         
         /// <summary>
         /// The object that holds the serialized object data
         /// </summary>
-        private SerializationInfo info;
+        private SerializationInfo _info;
         
         /// <summary>
         /// The contextual information about the source or destination
         /// </summary>
-        private StreamingContext context;
+        private StreamingContext _context;
         
         /// <summary>
         /// Message default when the ExceptionCDate is initialize without message
@@ -72,11 +72,11 @@ namespace CDate.Exceptions
         {
             if (message.Equals(""))
             {
-                this.Message = messageDefault;
+                this._Message = messageDefault;
             }
             else
             {
-                this.Message = message;
+                this._Message = message;
             }
         }
     
@@ -88,8 +88,8 @@ namespace CDate.Exceptions
         public CDateException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            this.Info = info;
-            this.Context = context;
+            this._Info = info;
+            this._Context = context;
         }
 
         /// <summary>
@@ -100,52 +100,52 @@ namespace CDate.Exceptions
         public CDateException(String message, Exception innerException)
             : base(message, innerException)
         {
-            this.InnerException = innerException;
+            this._InnerException = innerException;
 
             if (message.Equals(""))
             {
-                this.Message = messageDefault;
+                this._Message = messageDefault;
             }
             else
             {
-                this.Message = message;
+                this._Message = message;
             }
         }
 
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        private String Message
+        private String _Message
         {
-            get { return message; }
-            set { message = value; }
+            get { return _message; }
+            set { _message = value; }
         }
 
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        private Exception InnerException
+        private Exception _InnerException
         {
-            get { return innerException; }
-            set { innerException = value; }
+            get { return _innerException; }
+            set { _innerException = value; }
         }
 
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        private SerializationInfo Info
+        private SerializationInfo _Info
         {
-            get { return info; }
-            set { info = value; }
+            get { return _info; }
+            set { _info = value; }
         }
 
         /// <summary>
         /// Property function that allow get and set the property
         /// </summary>
-        private StreamingContext Context
+        private StreamingContext _Context
         {
-            get { return context; }
-            set { context = value; }
+            get { return _context; }
+            set { _context = value; }
         }
     }
 }
