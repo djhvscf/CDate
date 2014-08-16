@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CDate.Enums;
+using CDate.Exceptions;
 
 namespace CDate.Core
 {
@@ -19,6 +20,7 @@ namespace CDate.Core
         private Minute minute;
         private Second second;
         private Millisecond millisecond;
+        private String dateString;
         private DateTime nativeDate;
         private static readonly String formatMMddyy = "MM/dd/yy";
         private static readonly String formatddMMyy = "dd/MM/yy";
@@ -28,7 +30,6 @@ namespace CDate.Core
         private static readonly String format12Hour = "hh:mm:ss";
         private static readonly String formatAMPM = "tt";
         //private int dayOfMonth;
-        //private String dateString;
         /*private static readonly int monthInYear = 12;
         private static readonly int daysInMonth = 31;
         private static readonly int hoursInDay = 24;
@@ -53,6 +54,24 @@ namespace CDate.Core
             this.Minute = new Minute(pnativeDate.Minute);
             this.Second = new Second(pnativeDate.Second);
             this.Millisecond = new Millisecond(pnativeDate.Millisecond);
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dateString"></param>
+        public CDate(String dateString)
+        {
+        	this.DateString = dateString;
+    		this.NativeDate = Convert.ToDateTime(dateString);
+    		this.Year = new Year(this.NativeDate.Year);
+        	this.Month = new Month(this.NativeDate.Month);
+        	this.Day = new Day(this.NativeDate.Day);
+        	this.Week = new Week();
+        	this.Hour = new Hour(0);
+        	this.Minute = new Minute(this.NativeDate.Minute);
+        	this.Second = new Second(this.NativeDate.Second);
+        	this.Millisecond = new Millisecond(this.NativeDate.Millisecond);
         }
 
         /// <summary>
@@ -137,7 +156,7 @@ namespace CDate.Core
             set { millisecond = value; }
         }
 
-        /*/// <summary>
+        /// <summary>
         /// 
         /// </summary>
         private String DateString
@@ -146,7 +165,7 @@ namespace CDate.Core
             set { dateString = value; }
         }
 
-        /// <summary>
+        /*/// <summary>
         /// 
         /// </summary>
         private int DayOfMonth
@@ -165,14 +184,14 @@ namespace CDate.Core
         	return this.NativeDate.ToString(formatMMddyyyy);
         }
         
-        public String getDate_MM_dd_yy_HH_mm_ss(bool isAMPM)
+        public String getDate_MM_dd_yy_HH_mm_ss()
         {
-    		return this.NativeDate.ToString(formatMMddyy + " " + format24Hour + (isAMPM ? " " + formatAMPM : ""));
+    		return this.NativeDate.ToString(formatMMddyy + " " + format24Hour);
         }
         
-        public String getDate_MM_dd_yyyy_HH_mm_ss(bool isAMPM)
+        public String getDate_MM_dd_yyyy_HH_mm_ss()
         {
-    		return this.NativeDate.ToString(formatMMddyyyy + " " + format24Hour + (isAMPM ? " " + formatAMPM : ""));
+    		return this.NativeDate.ToString(formatMMddyyyy + " " + format24Hour);
         }
         
         public String getDate_MM_dd_yy_hh_mm_ss(bool isAMPM)
@@ -195,14 +214,14 @@ namespace CDate.Core
         	return this.NativeDate.ToString(formatddMMyyyy);
         }
         
-        public String getDate_dd_MM_yy_HH_mm_ss(bool isAMPM)
+        public String getDate_dd_MM_yy_HH_mm_ss()
         {
-        	return this.NativeDate.ToString(formatddMMyy + " " + format24Hour + (isAMPM ? " " + formatAMPM : ""));
+        	return this.NativeDate.ToString(formatddMMyy + " " + format24Hour);
         }
         
-        public String getDate_dd_MM_yyyy_HH_mm_ss(bool isAMPM)
+        public String getDate_dd_MM_yyyy_HH_mm_ss()
         {
-        	return this.NativeDate.ToString(formatddMMyyyy + " " + format24Hour + (isAMPM ? " " + formatAMPM : ""));
+        	return this.NativeDate.ToString(formatddMMyyyy + " " + format24Hour);
         }
         
         public String getDate_dd_MM_yy_hh_mm_ss(bool isAMPM)
