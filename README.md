@@ -42,6 +42,10 @@ Main Functions
 
 .getYear() -> Return the year in 4 digits.
 
+.getHour(boolean) -> Return the hour of the date. True to include AMPM or false no include AMPM.
+
+.getHour24Format() -> Return the hour of a date in 24 format.
+
 .getMonthNumber() -> Return the month number. 1 to 31.
 
 .getMonthName() -> Return the month name.
