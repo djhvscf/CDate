@@ -52,8 +52,6 @@ Main Functions
 
 .getWeek() -> Return the week number. 1 to 52.
 
-.getHour(boolean) -> Return the hour of the date. True to apply 24 format or false to apply 12 format.
-
 .getMinute() -> Return the minutes of the date.
 
 .getSecond() -> Return the seconds of the date.

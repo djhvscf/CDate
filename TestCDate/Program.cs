@@ -55,6 +55,7 @@ namespace TestCDate
 			Console.WriteLine(date.getWeek());
 			Console.WriteLine(date.getHour(true));
 			Console.WriteLine(date.getHour(false));
+			Console.WriteLine(date.getHour24Format());
 			Console.WriteLine(date.getMinute());
 			Console.WriteLine(date.getSecond());
 			Console.WriteLine(date.getMillisecond());
