@@ -457,6 +457,86 @@ namespace CDate.Core
         	return this.Millisecond._Millisecond;
         }
         
+        /// <summary>
+        /// Add years to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="years">Years to add</param>
+        /// <returns>Datetime with years added</returns>
+        public DateTime addYears(int years)
+        {
+        	return this.NativeDate.AddYears(years);
+        }
+        
+        /// <summary>
+        /// Add months to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="months">Months to add</param>
+        /// <returns>Datetime with months added</returns>
+        public DateTime addMonths(int months)
+        {
+        	return this.NativeDate.AddMonths(months);
+        }
+        
+        /// <summary>
+        /// Add weeks to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="weeks">Weeks to add</param>
+        /// <returns>Datetime with weeks added</returns>
+        public DateTime addWeeks(int weeks)
+        {
+        	return this.NativeDate.AddDays(weeks * 7);
+        }
+        
+        /// <summary>
+        /// Add hours to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="hours">Hours to add</param>
+        /// <returns>Datetime with hours added</returns>
+        public DateTime addHours(double hours)
+        {
+        	return this.NativeDate.AddHours(hours);
+        }
+        
+        /// <summary>
+        /// Add minutes to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="minutes">Minutes to add</param>
+        /// <returns>Datetime with minutes added</returns>
+        public DateTime addMinutes(double minutes)
+        {
+        	return this.NativeDate.AddMinutes(minutes);
+        }
+        
+        /// <summary>
+        /// Add seconds to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="seconds">Seconds to add</param>
+        /// <returns>Datetime with seconds added</returns>
+        public DateTime addSeconds(double seconds)
+        {
+        	return this.NativeDate.AddSeconds(seconds);
+        }
+        
+        /// <summary>
+        /// Add milliseconds to the Date. This method edit the object directly. Use a new object if you need a copy
+        /// </summary>
+        /// <param name="milliseconds">Milliseconds to add</param>
+        /// <returns>Datetime with milliseconds added</returns>
+        public DateTime addMilliseconds(double milliseconds)
+        {
+        	return this.NativeDate.AddMilliseconds(milliseconds);
+        }
+        
+        /// <summary>
+        /// Return the difference in years between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in years</param>
+        /// <returns>Difference in years between both dates. This number could be negative</returns>
+        public int diffYears(DateTime datetime)
+        {
+        	return (this.NativeDate.Year - datetime.Year);
+        }
+        
         #region Next Version
         /*
         public static long getTimeElapsedInNanoseconds(DateTime dateTime1, DateTime dateTime2)
