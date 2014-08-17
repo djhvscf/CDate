@@ -64,7 +64,8 @@ Main Functions
 
 Release history
 ======================
-
+Version: 1.0.0 - 16-August-2014
 
 Download CDate.dll
 =======================
+https://github.com/djhvscf/CDate/releases/tag/v1.0.0
