@@ -534,7 +534,77 @@ namespace CDate.Core
         /// <returns>Difference in years between both dates. This number could be negative</returns>
         public int diffYears(DateTime datetime)
         {
-        	return (this.NativeDate.Year - datetime.Year);
+        	return (this.getYear() - datetime.Year);
+        }
+        
+        /// <summary>
+        /// Return the difference in months between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in months</param>
+        /// <returns>Difference in months between both dates. This number could be negative</returns>
+        public int diffMonths(DateTime datetime)
+        {
+        	return (this.getMonthNumber() - datetime.Month);
+        }
+        
+        /// <summary>
+        /// Return the difference in weeks between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in weeks</param>
+        /// <returns>Difference in weeks between both dates. This number could be negative</returns>
+        public int diffWeeks(DateTime datetime)
+        {
+        	return (this.getWeek() - new Week().getWeek(datetime));
+        }
+        
+        /// <summary>
+        /// Return the difference in days between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in days</param>
+        /// <returns>Difference in days between both dates. This number could be negative</returns>
+        public int diffDays(DateTime datetime)
+        {
+        	return (this.getDayNumber() - datetime.Day);
+        }
+        
+        /// <summary>
+        /// Return the difference in hours between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in hours</param>
+        /// <returns>Difference in hours between both dates. This number could be negative</returns>
+        public int diffHours(DateTime datetime)
+        {
+        	return (Convert.ToInt32(this.getHour(false)) - datetime.Hour);
+        }
+        
+        /// <summary>
+        /// Return the difference in minutes between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in minutes</param>
+        /// <returns>Difference in minutes between both dates. This number could be negative</returns>
+        public int diffMinutes(DateTime datetime)
+        {
+        	return (this.getMinute() - datetime.Minute);
+        }
+        
+        /// <summary>
+        /// Return the difference in seconds between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in seconds</param>
+        /// <returns>Difference in seconds between both dates. This number could be negative</returns>
+        public int diffSeconds(DateTime datetime)
+        {
+        	return (this.getSecond() - datetime.Second);
+        }
+        
+        /// <summary>
+        /// Return the difference in milliseconds between main object and parameter
+        /// </summary>
+        /// <param name="datetime">Datetime to know the difference in milliseconds</param>
+        /// <returns>Difference in milliseconds between both dates. This number could be negative</returns>
+        public int diffMilliseconds(DateTime datetime)
+        {
+        	return (this.getMillisecond() - datetime.Millisecond);
         }
         
         #region Next Version
