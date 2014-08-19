@@ -35,16 +35,6 @@ namespace CDate.Core
         private int _month;
 
         /// <summary>
-        /// Represents a  first month of a Year January
-        /// </summary>
-       private static readonly int defaultYear = 2014;
-
-        /// <summary>
-        /// Represent a first day of a week. Sunday
-        /// </summary>
-        private static readonly int defaultDay = 1;
-
-        /// <summary>
         /// Constructor with the Month
         /// </summary>
         /// <param name="pmonth">Month</param>

@@ -33,55 +33,15 @@ namespace CDate.Core
     /// </summary>
     public class CDate
     {
-    	/// <summary>
-    	/// Object that represent a Year
-    	/// </summary>
-        private Year year;
 
-        /// <summary>
-        ///Object that represent a Month 
-        /// </summary>
-        private Month month;
         
-        /// <summary>
-        /// Object that represent a Day
-        /// </summary>
-        private Day day;
         
-        /// <summary>
-        /// Object that represent a Week
-        /// </summary>
-        private Week week;
         
-        /// <summary>
-        /// Object that represent an Hour
-        /// </summary>
-        private Hour hour;
         
-        /// <summary>
-        /// Object that represent a Minute
-        /// </summary>
-        private Minute minute;
         
-        /// <summary>
-        /// Object that represent a Second
-        /// </summary>
-        private Second second;
         
-        /// <summary>
-        /// Object that represent a Millisecond
-        /// </summary>
-        private Millisecond millisecond;
         
-        /// <summary>
-        /// Object that represent the String date passed by parameter
-        /// </summary>
-        private String dateString;
         
-        /// <summary>
-        /// Main object where we obtain the properties
-        /// </summary>
-        private DateTime nativeDate;
         
         /// <summary>
         /// String for obtains the date in MM/dd/yy format
@@ -153,96 +113,95 @@ namespace CDate.Core
         	this.Millisecond = new Millisecond(this.NativeDate.Millisecond);
         }
 
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private DateTime NativeDate
-        {
-            get { return nativeDate; }
-            set { nativeDate = value; }
-        }
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private DateTime NativeDate 
+		{
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Year Year
-        {
-            get { return year; }
-            set { year = value; }
-        }
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Year Year 
+		{
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Month Month
-        {
-            get { return month; }
-            set { month = value; }
-        }
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Month Month 
+		{
+			get;
+			set;
+		}
+                
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Week Week 
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Day Day 
+		{
+			get;
+			set;
+		}
         
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Hour Hour 
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Minute Minute 
+		{
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Second Second 
+		{
+			get;
+			set;
+		}
         
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Week Week
-        {
-            get { return week; }
-            set { week = value; }
-        }
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private Millisecond Millisecond 
+		{
+			get;
+			set;
+		}
 
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Day Day
-        {
-            get { return day; }
-            set { day = value; }
-        }
-        
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Hour Hour
-        {
-            get { return hour; }
-            set { hour = value; }
-        }
-
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Minute Minute
-        {
-            get { return minute; }
-            set { minute = value; }
-        }
-
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Second Second
-        {
-            get { return second; }
-            set { second = value; }
-        }
-        
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private Millisecond Millisecond
-        {
-            get { return millisecond; }
-            set { millisecond = value; }
-        }
-
-        /// <summary>
-        /// Property funtion that allow get and set the property
-        /// </summary>
-        private String DateString
-        {
-            get { return dateString; }
-            set { dateString = value; }
-        }
+		/// <summary>
+		/// Property funtion that allow get and set the property
+		/// </summary>
+		private String DateString 
+		{
+			get;
+			set;
+		}
 	
         /// <summary>
         /// Functions that returns a String with date in format MM/dd/yy
@@ -606,54 +565,5 @@ namespace CDate.Core
         {
         	return (this.getMillisecond() - datetime.Millisecond);
         }
-        
-        #region Next Version
-        /*
-        public static long getTimeElapsedInNanoseconds(DateTime dateTime1, DateTime dateTime2)
-        {
-			return getElapsedTicks(dateTime1, dateTime2) * 100;
-        }
-        
-        public static long getTimeElapsedInTicks(DateTime dateTime1, DateTime dateTime2)
-        {
-			return getElapsedTicks(dateTime1, dateTime2);
-        }
-        
-        public static double getTimeElapseInMillisecond(DateTime dateTime1, DateTime dateTime2)
-        {
-			return createTimeSpan(dateTime1, dateTime2).TotalMilliseconds;
-        }
-        
-        public static double getTimeElapsedInSecond(DateTime dateTime1, DateTime dateTime2)
-        {
-			return createTimeSpan(dateTime1, dateTime2).TotalSeconds;
-        }
-        
-        public static double getTimeElapsedInMinutes(DateTime dateTime1, DateTime dateTime2)
-        {
-			return createTimeSpan(dateTime1, dateTime2).TotalMinutes;
-        }
-        
-        public static double getTimeElapsedInHours(DateTime dateTime1, DateTime dateTime2)
-        {
-			return createTimeSpan(dateTime1, dateTime2).TotalHours;
-        }
-        
-        public static double getTimeElapsedInDays(DateTime dateTime1, DateTime dateTime2)
-        {
-			return createTimeSpan(dateTime1, dateTime2).TotalDays;
-        }
-        
-        private static long getElapsedTicks(DateTime dateTime1, DateTime dateTime2)
-        {
-        	return dateTime2.Ticks - dateTime1.Ticks;
-        }
-        
-        private static TimeSpan createTimeSpan(DateTime dateTime1, DateTime dateTime2)
-        {
-        	return new TimeSpan(getElapsedTicks(dateTime1, dateTime2));
-        }
-        */
-        #endregion
     }
 }
