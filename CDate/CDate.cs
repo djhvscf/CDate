@@ -33,16 +33,6 @@ namespace CDate.Core
     /// </summary>
     public class CDate
     {
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
         /// <summary>
         /// String for obtains the date in MM/dd/yy format
         /// </summary>
@@ -111,12 +101,13 @@ namespace CDate.Core
         	this.Minute = new Minute(this.NativeDate.Minute);
         	this.Second = new Second(this.NativeDate.Second);
         	this.Millisecond = new Millisecond(this.NativeDate.Millisecond);
+
         }
 
 		/// <summary>
 		/// Property funtion that allow get and set the property
 		/// </summary>
-		private DateTime NativeDate 
+		public DateTime NativeDate 
 		{
 			get;
 			set;

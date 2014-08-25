@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 using CDate.Core;
 
 namespace TestCDate
@@ -17,9 +18,9 @@ namespace TestCDate
 		{
 			Console.WriteLine("Hello World!");
 			
-			CDate.Core.CDate date = new CDate.Core.CDate(DateTime.Now);
+			//CDate.Core.CDate date = new CDate.Core.CDate(DateTime.Now);
 			CDate.Core.CDate dateString = new CDate.Core.CDate("16/08/2000 07:23:17 a.m.");
-			Console.WriteLine(DateTime.Now);
+			/*Console.WriteLine(DateTime.Now);
 			Console.WriteLine("_________________________________");
 			Console.WriteLine(date.getDate_MM_dd_yy());
 			Console.WriteLine(date.getDate_MM_dd_yyyy());
@@ -59,9 +60,10 @@ namespace TestCDate
 			Console.WriteLine(date.getMinute());
 			Console.WriteLine(date.getSecond());
 			Console.WriteLine(date.getMillisecond());
-			Console.WriteLine("_________________________________");
+			Console.WriteLine("_________________________________");*/
 			
 			Console.WriteLine("_________________________________");
+			Console.WriteLine(dateString.NativeDate);
 			Console.WriteLine(dateString.getDate_MM_dd_yy());
 			Console.WriteLine(dateString.getDate_MM_dd_yyyy());
 			Console.WriteLine("_________________________________");
@@ -101,7 +103,28 @@ namespace TestCDate
 			Console.WriteLine(dateString.getMillisecond());
 			Console.WriteLine("_________________________________");
 			Console.Write("Exit ");
-			Console.ReadKey(true);
+			
+			
+			List<string> ds = new List<string>();
+            ds.Add(@"The last round was June 10, 2004; this time the unbroken record was held.");
+            ds.Add(@"The last round was 2:14PM; this time the unbroken record was held.");
+            ds.Add(@"The last round was on Tuesday; this time the unbroken record was held.");
+            foreach (string date in ds)
+            {
+                Console.WriteLine("\n* " + date);
+                CDate.DateTimeRoutines.ParsedDateTime dt;
+                if (CDate.DateTimeRoutines.TryParseDateOrTime(date, CDate.DateTimeRoutines.DateTimeFormat.USA_DATE, out dt))
+                {
+                    if (dt.IsDateFound)
+                        Console.WriteLine("Date was found: " + dt.DateTime.ToString());
+                    else if (dt.IsTimeFound)
+                        Console.WriteLine("Time only was found: " + dt.DateTime.ToString());
+                }
+                else
+                    Console.WriteLine("Date was not found");
+            }
+            
+            Console.ReadKey(true);
 		}
 	}
 }
