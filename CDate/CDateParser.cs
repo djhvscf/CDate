@@ -26,7 +26,7 @@ using CDate;
 namespace CDate
 {
 	/// <summary>
-	/// Base class that allow convert string to datetime object
+	/// Base class that allow convert DateTime in differents formats
 	/// </summary>
 	public class CDateParser
 	{
