@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CDate.cs" />
     <Compile Include="CDateParser.cs" />
+    <Compile Include="CDateValidator.cs" />
     <Compile Include="Core\DateTimeRoutines.cs" />
     <Compile Include="Core\Day.cs" />
     <Compile Include="Core\Hour.cs" />
