@@ -93,7 +93,7 @@ namespace CDate.Core
         public CDate(String dateString)
         {
             this.DateString = dateString;
-            this.NativeDate = Convert.ToDateTime(dateString);
+            this.NativeDate = CDateValidator.validateDate(dateString) ? DateTime.Now : Convert.ToDateTime(dateString);
             this.Year = new Year(this.NativeDate.Year);
             this.Month = new Month(this.NativeDate.Month);
             this.Day = new Day(this.NativeDate.Day);
