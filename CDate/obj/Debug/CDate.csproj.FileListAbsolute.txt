@@ -3,3 +3,8 @@ C:\Users\Dennis\Documents\GitHub\CDate\CDate\bin\Debug\CDate.pdb
 C:\Users\Dennis\Documents\GitHub\CDate\CDate\obj\Debug\CDate.dll
 C:\Users\Dennis\Documents\GitHub\CDate\CDate\obj\Debug\CDate.pdb
 C:\Users\Dennis\Documents\GitHub\CDate\CDate\obj\Debug\CDate.csprojResolveAssemblyReference.cache
+C:\Users\Dennis Hernandez\Documents\GitHub\CDate\CDate\obj\Debug\CDate.csprojResolveAssemblyReference.cache
+C:\Users\Dennis Hernandez\Documents\GitHub\CDate\CDate\obj\Debug\CDate.dll
+C:\Users\Dennis Hernandez\Documents\GitHub\CDate\CDate\obj\Debug\CDate.pdb
+C:\Users\Dennis Hernandez\Documents\GitHub\CDate\CDate\bin\Debug\CDate.dll
+C:\Users\Dennis Hernandez\Documents\GitHub\CDate\CDate\bin\Debug\CDate.pdb
