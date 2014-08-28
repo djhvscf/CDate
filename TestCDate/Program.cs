@@ -21,7 +21,8 @@ namespace TestCDate
 			Console.WriteLine("Hello World!");
 			
 			//CDate.Core.CDate date = new CDate.Core.CDate(DateTime.Now);
-			CDate.Core.CDate dateString = new CDate.Core.CDate("16/08/2000 07:23:17 a.m.");
+			//CDate.Core.CDate dateString = new CDate.Core.CDate("16/08/2000 07:23:17 a.m.");
+            CDate.Core.CDate dateString = new CDate.Core.CDate("16/08/2000  ");
 			/*Console.WriteLine(DateTime.Now);
 			Console.WriteLine("_________________________________");
 			Console.WriteLine(date.getDate_MM_dd_yy());
