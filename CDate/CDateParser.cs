@@ -30,6 +30,9 @@ namespace CDate
 	/// </summary>
 	public class CDateParser
 	{
-		
+		public CDateParser(DateTime dateTime, String format)
+		{
+			dateTime = Convert.ToDateTime(dateTime, System.Globalization.CultureInfo.GetCultureInfo(format));
+		}
 	}
 }

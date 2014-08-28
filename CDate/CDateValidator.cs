@@ -13,7 +13,7 @@ namespace CDate
         private static readonly String separatorSlash = "/";
         private static String[] separators = new String[2];
 
-        public static bool validateDate(String date, bool deleteJunk = false)
+        public static bool isValidateDate(String date)
         {
             bool isValidDate = false;
             String dateInternal = date.TrimStart().TrimEnd();
@@ -26,10 +26,10 @@ namespace CDate
 
                 if (dateParts.Length == 3)
                 {
-                    if ((dateParts[2].Split(' ')).Length == 1)
+                	if ((dateParts[2].Split(' ')).Length == 1)
                     {
                         //0. Day, 1. Month, 2. Year
-                        if (validateDay(dateParts[0]) && validateMonth(dateParts[1]))
+                        if (isValidateDay(dateParts[0]) && isValidateMonth(dateParts[1]))
                         {
                             isValidDate = true;
                         }
@@ -57,7 +57,7 @@ namespace CDate
         /// </summary>
         /// <param name="day">Day number</param>
         /// <returns>True is correct, otherwise, false</returns>
-        private static bool validateDay(String day)
+        private static bool isValidateDay(String day)
         {
             return Convert.ToInt32(day) <= daysInMonth;
         }
@@ -67,7 +67,7 @@ namespace CDate
         /// </summary>
         /// <param name="month">Month number</param>
         /// <returns>True is correct, otherwise, false</returns>
-        private static bool validateMonth(String month)
+        private static bool isValidateMonth(String month)
         {
             return Convert.ToInt32(month) <= monthInYear;
         }
