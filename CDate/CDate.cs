@@ -90,10 +90,18 @@ namespace CDate.Core
         /// Constructor that receives a String that will be convert to DateTime
         /// </summary>
         /// <param name="dateString">String to convert to DateTime</param>
-        public CDate(String dateString)
+        public CDate(String dateString) : this(dateString, null)
+        {
+        }
+        
+        /// <summary>
+        /// Constructor that receives a String that will be convert to DateTime
+        /// </summary>
+        /// <param name="dateString">String to convert to DateTime</param>
+        public CDate(String dateString, Calendar calendar)
         {
             this.DateString = dateString;
-            this.NativeDate = CDateValidator.tryNewDate(dateString, null) == null ? DateTime.Now : Convert.ToDateTime(CDateValidator.tryNewDate(dateString, null));
+            this.NativeDate = CDateValidator.tryNewDate(dateString, calendar) == null ? DateTime.Now : Convert.ToDateTime(CDateValidator.tryNewDate(dateString, calendar));
             this.Year = new Year(this.NativeDate.Year);
             this.Month = new Month(this.NativeDate.Month);
             this.Day = new Day(this.NativeDate.Day);
@@ -102,7 +110,6 @@ namespace CDate.Core
             this.Minute = new Minute(this.NativeDate.Minute);
             this.Second = new Second(this.NativeDate.Second);
             this.Millisecond = new Millisecond(this.NativeDate.Millisecond);
-
         }
 
         /// <summary>

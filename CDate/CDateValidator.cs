@@ -11,26 +11,7 @@ namespace CDate
         private static readonly String separatorHyphen = "-";
         private static readonly String separatorSlash = "/";
         private static String[] separators = new String[2];
-
-        private static bool validateDate(String date)
-        {
-            bool isValidDate = false;
-            String dateInternal = date.TrimStart().TrimEnd();
-            if (dateInternal.Contains(separatorHyphen) || dateInternal.Contains(separatorSlash))
-            {
-                int[] dateParts = getDateParts(date);
-
-                //0. Day, 1. Month, 2. Year
-                isValidDate = isDateValid(dateParts[2], dateParts[1], dateParts[0]);
-            }
-            else
-            {
-                throw new FormatException("Date is invalid");
-            }
-
-            return isValidDate;
-        }
-
+		
         /// <summary>
         /// Function that valid if the date time is correct
         /// </summary>
@@ -85,7 +66,8 @@ namespace CDate
         /// <returns>New date format</returns>
         private static String convertDate(int firstPos, int secondPos, int thirdPos)
         {
-            String newDate = "";
+            String newDate = firstPos.ToString() + separatorSlash + secondPos.ToString() + separatorSlash + thirdPos.ToString();
+            
             if (firstPos > 12)
             {
                 newDate = secondPos.ToString() + separatorSlash + firstPos.ToString() + separatorSlash + thirdPos.ToString();
@@ -122,8 +104,12 @@ namespace CDate
 
             try
             {
-                convertDate(dateParts[0], dateParts[1], dateParts[2]);
-                return tryNewDate(dateParts[0], dateParts[1], dateParts[2], calendar);
+				//string strDateStarted = "Thu Jan 03 15:04:29 2013";
+				string strDateStarted = "16/08/2000 07:23:17";				
+				DateTime datDateStarted;
+				DateTime.TryParse(strDateStarted, out datDateStarted);
+				
+				return tryNewDate(dateParts[2], dateParts[1], dateParts[0], calendar);
             }
             catch
             {
@@ -132,10 +118,10 @@ namespace CDate
         }
 
         /// <summary>
-        /// 
+        /// Return the day, month and year of the string date passed
         /// </summary>
-        /// <param name="date"></param>
-        /// <returns></returns>
+        /// <param name="date">String date</param>
+        /// <returns>Array with date parts</returns>
         private static int[] getDateParts(String date)
         {
             try
@@ -147,6 +133,7 @@ namespace CDate
                 separators[0] = separatorHyphen;
                 separators[1] = separatorSlash;
 
+                date = date.TrimStart().TrimEnd();
                 dateParts = date.Split(separators, 3, StringSplitOptions.None);
                 for (int i = 0; i < dateParts.Length; i++)
                 {
