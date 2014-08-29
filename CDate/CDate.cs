@@ -100,8 +100,9 @@ namespace CDate.Core
         /// <param name="dateString">String to convert to DateTime</param>
         public CDate(String dateString, Calendar calendar)
         {
+        	CDateValidator.validateStringToDateTime(dateString, "en-US");
             this.DateString = dateString;
-            this.NativeDate = CDateValidator.tryNewDate(dateString, calendar) == null ? DateTime.Now : Convert.ToDateTime(CDateValidator.tryNewDate(dateString, calendar));
+            this.NativeDate = DateTime.Now;
             this.Year = new Year(this.NativeDate.Year);
             this.Month = new Month(this.NativeDate.Month);
             this.Day = new Day(this.NativeDate.Day);
