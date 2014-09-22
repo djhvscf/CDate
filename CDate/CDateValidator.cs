@@ -9,8 +9,50 @@ namespace CDate
 {
     public static class CDateValidator
     {
+    	private static readonly String[] formatParts = {"-", "/", ":", "d", "M", "y", "h", "H", "s", "tt", "GMT"};
     	private static readonly String separatorHyphen = "-";
         private static readonly String separatorSlash = "/";
+        private static readonly String separatorTwoPoints = ":";
+        private static readonly String dayAbbr = "d";
+        private static readonly String monthAbbr = "M";
+        private static readonly String yearAbbr = "y";
+        private static readonly String hourAbbr = "h";
+        private static readonly String HourAbbr = "H";
+        private static readonly String secondAbbr = "s";
+        private static readonly String ampmAbbr = "tt";
+        private static readonly String GMT = "GMT";
+        
+        public static bool validateSomething(String date, String[] format)
+        {
+        	String formatToConvert = formString(getValidStrings(format));
+        	return false;
+        }
+        
+        private static String[] getValidStrings(String[] format)
+        {
+        	List<String> validStrings = new List<string>();
+        	
+        	for(int i = 0; i < format.Length; i++)
+        	{
+        		if(formatParts.Contains(format[i]))
+    		   	{
+        			validStrings.Add(format[i]);
+    		   	}
+        	}
+        	
+        	return validStrings.ToArray();
+        }
+        
+        private static String formString(String[] format)
+        {
+        	String formatString = "";
+        	for(int i = 0; i < format.Length; i++)
+        	{
+        		formatString += format[i].ToString() + separatorSlash;
+        	}
+        	
+        	return formatString.Remove(formatString.LastIndexOf(separatorSlash), 1);
+        }
         
         public static bool validateStringToDateTime(String date, String format)
         {

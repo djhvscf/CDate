@@ -19,9 +19,10 @@ namespace TestCDate
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
-			
+			String[] formats = {"d", "M", "y"};
 			//CDate.Core.CDate date = new CDate.Core.CDate(DateTime.Now);
 			CDate.Core.CDate dateString = new CDate.Core.CDate("08/08/2000 07:23:17 AM");
+			CDateValidator.validateSomething("08/08/2000 07:23:17 AM", formats);
             //CDate.Core.CDate dateString = new CDate.Core.CDate("16/08/2000  ");
             //CDate.Core.CDate dateString = new CDate.Core.CDate("08/08/2000");
 			/*Console.WriteLine(DateTime.Now);
